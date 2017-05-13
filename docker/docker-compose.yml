@@ -1,0 +1,18 @@
+version: '2'
+services:
+  # アプリのテスト/ビルド用コンテナ
+  deploy:
+    build: deploy
+    volumes:
+      - ./deploy/share_by_container/android-sdk:/Android/sdk
+      - ./deploy/share_by_container/dot_gradle:/root/.gradle
+      - ../:/app
+    working_dir: /app
+    # tty: true # コンテナにログインして調査したい場合はコメントイン
+    depends_on:
+      - emulator
+  # エミュレータ実行コンテナ
+  emulator:
+    image: mattsawyer/android-emulator
+
+
