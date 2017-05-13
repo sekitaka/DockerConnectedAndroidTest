@@ -7,3 +7,8 @@
 /build
 /captures
 .externalNativeBuild
+
+/docker/deploy/share_by_container/android-sdk/*
+!/docker/deploy/share_by_container/android-sdk/.gitkeep
+/docker/deploy/share_by_container/dot_gradle/*
+!/docker/deploy/share_by_container/dot_gradle/.gitkeep
